@@ -108,7 +108,7 @@ class ModelHandler(ModelFormView):
     A basic CRUD handler
     '''
     queryset = None
-    success_url_creete = None
+    success_url_create = None
     success_url_update = None
     success_url_delete = None
     template_name_suffix_create = '_form'
