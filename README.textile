@@ -1,4 +1,4 @@
-h1. Simple (Sane) Class-Based Views for Django
+h1. Simple (and sane) class-based views for Django
 
 What this packages provides can be described as class-based views done right.
 
