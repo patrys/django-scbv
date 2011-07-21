@@ -29,6 +29,8 @@ class ParrotHandler(views.ModelHandler):
 
 <pre><code># urls.py
 
+from django.conf.urls.defaults import patterns, include, url
+
 from . import views
 
 urlpatterns = patterns('',
