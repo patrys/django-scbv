@@ -49,7 +49,7 @@ class BaseFormView(View):
                                        ' Provide a success_url.')
         return self.success_url
 
-    def create_form(self, form_class, data, files, **kwargs):
+    def create_form(self, data, files, **kwargs):
         form_class, extra_args = self.get_form_class(**kwargs)
         return form_class(data, files, **extra_args)
 
