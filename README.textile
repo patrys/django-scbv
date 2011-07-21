@@ -8,33 +8,30 @@ What this packages provides can be described as class-based views done right.
 
 h2. Usage example
 
-<pre><code>
-    # models.py
+<pre><code># models.py
 
-    class Parrot(models.Model):
-        name = models.CharField(max_length=20)
+class Parrot(models.Model):
+    name = models.CharField(max_length=20)
 </code></pre>
 
-<pre><code>
-    # views.py
+<pre><code># views.py
 
-    from scbv import views
+from scbv import views
 
-    from . import models
+from . import models
 
-    class ParrotHandler(views.ModelHandler):
-        model = models.Parrot
-        success_url_create = 'parrot-created'
-        success_url_update = 'parrot-updated'
-        success_url_delete = 'parrot-deleted'
+class ParrotHandler(views.ModelHandler):
+    model = models.Parrot
+    success_url_create = 'parrot-created'
+    success_url_update = 'parrot-updated'
+    success_url_delete = 'parrot-deleted'
 </code></pre>
 
-<pre><code>
-    # urls.py
+<pre><code># urls.py
 
-    from . import views
+from . import views
 
-    urlpatterns = patterns('',
-        url(r'^parrot/', include(views.ParrotHandler().get_urls(prefix='parrot-form'))),
-    )
+urlpatterns = patterns('',
+    url(r'^parrot/', include(views.ParrotHandler().get_urls(prefix='parrot-form'))),
+)
 </code></pre>
