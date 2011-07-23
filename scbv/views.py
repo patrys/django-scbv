@@ -9,7 +9,7 @@ class View(object):
     template_name = None
     
     def __call__(self, request):
-        return self.respond(self.get_context_data(request))
+        return self.respond(request, self.get_context_data(request))
 
     def get_template_names(self, **kwargs):
         return [self.template_name]
